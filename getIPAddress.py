@@ -1,6 +1,9 @@
 # used https://diyrobocars.com/2017/11/27/displaying-your-raspberry-pi-ip-address-on-bootup/
 # https://ubuntu.com/tutorials/gpio-on-raspberry-pi#3-basic-gpio-example
+
+
 import os, socket, fcntl, struct, time, lgpio
+
 
 def get_ip_address(ifname):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -10,12 +13,14 @@ def get_ip_address(ifname):
     struct.pack('256s', ifname[:15])
     )[20:24])
 
-
+# self explanatory function - outputs ip
+# need to find a way to use this to output ip on screen
 def printIP():
     print("Wifi: ", get_ip_address('wlan0'))
     print("Ethernet: ", get_ip_address('eth0'))
 
 def GPIO():
+    #describes pins to output to
     pin = 0
 
     h = lgpio.gpiochip_open(0)
@@ -33,6 +38,8 @@ def GPIO():
             lgpio.gpio_write(h, pin, 0)
             time.sleep(1)
 
+    #runs until interrupted by keyboard press
     except KeyboardInterrupt:
         lgpio.gpio_write(h, pin, 0)
         lgpio.gpiochip_close(h)
+
