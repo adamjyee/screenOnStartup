@@ -6,6 +6,7 @@
 
 import os, socket, fcntl, struct, time, lgpio, sys, digitLibrary
 
+# unsure how exactly everything works here, needs more research
 def get_ip_address(ifname):
     
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -16,10 +17,17 @@ def get_ip_address(ifname):
     )[20:24])
 
 # self explanatory function - outputs ip
-# need to find a way to use this to output ip on screen
-def printIP():
+# 
+def returnIP(wifiOrEthernet):
     print("Wifi: ", get_ip_address('wlan0'))
     print("Ethernet: ", get_ip_address('eth0'))
+    if wifiOrEthernet.lower() == "wifi":
+        return(get_ip_address('wlan0'))
+    elif wifiOrEthernet.lower() == "ethernet":
+        return(get_ip_address('eth0'))
+    else:
+        print("There was an error in the returnIP function")
+        return("Error")
 
 def GPIO():
     #describes pins to output to
