@@ -1,10 +1,10 @@
 # used https://diyrobocars.com/2017/11/27/displaying-your-raspberry-pi-ip-address-on-bootup/
 # https://ubuntu.com/tutorials/gpio-on-raspberry-pi#3-basic-gpio-example
+# used https://roboindia.com/tutorials/raspberry-seven-segment/
 
 # lgpio returns an error on anything other than linux because it's a linux library
-# 
-import os, socket, fcntl, struct, time, lgpio
 
+import os, socket, fcntl, struct, time, lgpio, sys, digitLibrary
 
 def get_ip_address(ifname):
     
