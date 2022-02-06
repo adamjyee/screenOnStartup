@@ -1,5 +1,6 @@
 # used https://diyrobocars.com/2017/11/27/displaying-your-raspberry-pi-ip-address-on-bootup/
 # https://ubuntu.com/tutorials/gpio-on-raspberry-pi#3-basic-gpio-example
+# used https://roboindia.com/tutorials/raspberry-seven-segment/
 
 
 import os, socket, fcntl, struct, time, lgpio
