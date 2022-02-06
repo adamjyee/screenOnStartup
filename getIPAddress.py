@@ -2,12 +2,12 @@
 # https://ubuntu.com/tutorials/gpio-on-raspberry-pi#3-basic-gpio-example
 # used https://roboindia.com/tutorials/raspberry-seven-segment/
 
+# lgpio returns an error on anything other than linux because it's a linux library
+
 import os, socket, fcntl, struct, time, lgpio, sys, digitLibrary
 
-import os, socket, fcntl, struct, time, lgpio
-
-
 def get_ip_address(ifname):
+    
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     return socket.inet_ntoa(fcntl.ioctl(
     s.fileno(),
