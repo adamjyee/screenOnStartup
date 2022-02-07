@@ -1,3 +1,4 @@
-command to run the program (program name needs to be changed)
-- check on what it is exactly
-@reboot sleep 10; sudo python ip.py > /dev/tty1
+# command to run the program (program name needs to be changed)
+# - check on what it is exactly
+
+@reboot sleep 10; sudo python getIPAddress.py > /dev/tty1
