@@ -3,3 +3,15 @@ https://ubuntu.com/tutorials/gpio-on-raspberry-pi#1-overview
 
 this should be pretty useful
 http://abyz.me.uk/lg/py_lgpio.html
+
+a tutorial that is recommended for robo cars
+used https://diyrobocars.com/2017/11/27/displaying-your-raspberry-pi-ip-address-on-bootup/
+
+rpi gpio info
+https://ubuntu.com/tutorials/gpio-on-raspberry-pi#3-basic-gpio-example
+
+7 segment display info
+used https://roboindia.com/tutorials/raspberry-seven-segment/
+
+crontab page
+https://geekstuff.org/how-to-run-a-command-on-startup-in-ubuntu/
