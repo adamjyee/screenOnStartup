@@ -19,13 +19,14 @@ def get_ip_address(ifname):
 # self explanatory function - outputs ip
 # 
 def returnIP(wifiOrEthernet):
-    print("Wifi: ", get_ip_address('wlan0'))
-    print("Ethernet: ", get_ip_address('eth0'))
-    if wifiOrEthernet.lower() == "wifi":
-        return(get_ip_address('wlan0'))
-    elif wifiOrEthernet.lower() == "ethernet":
-        return(get_ip_address('eth0'))
-    else:
+    try:
+        print("Wifi: ", get_ip_address('wlan0'))
+        print("Ethernet: ", get_ip_address('eth0'))
+        if wifiOrEthernet.lower() == "wifi":
+            return(get_ip_address('wlan0'))
+        elif wifiOrEthernet.lower() == "ethernet":
+            return(get_ip_address('eth0'))
+    except ImportError:
         print("There was an error in the returnIP function")
         return("Error")
 
